@@ -1,83 +1,112 @@
 
-🚀 Primera Parte: Configuración del Proyecto BYD
-1. Procedimiento para crear carpeta del Proyecto: UIII_BYD_0478
+¡Excelente\! Este es un plan de proyecto detallado para construir tu aplicación Django. Seguiremos todos los pasos, asegurando que el proyecto **UIII\_BYD\_0478** quede totalmente funcional con el módulo de **`Proveedor`**.
+
+Aquí tienes el procedimiento completo y los códigos necesarios.
+
+-----
+
+## 🚀 Primera Parte: Configuración del Proyecto BYD
+
+### 1\. Procedimiento para crear carpeta del Proyecto: `UIII_BYD_0478`
+
 Abre la terminal de tu sistema operativo (o el Símbolo del Sistema en Windows / Terminal en macOS/Linux) y ejecuta:
 
-Bash
-
+```bash
 mkdir UIII_BYD_0478
-2. Procedimiento para abrir VS Code sobre la carpeta
+```
+
+### 2\. Procedimiento para abrir VS Code sobre la carpeta
+
 Navega a la carpeta recién creada y abre VS Code:
 
-Bash
-
+```bash
 cd UIII_BYD_0478
 code .
-3. Procedimiento para abrir terminal en VS Code
-Dentro de VS Code, presiona Ctrl + Ñ (o `Ctrl + `` en algunos teclados, o ve a Terminal > Nueva Terminal).
+```
 
-4. Procedimiento para crear carpeta entorno virtual .venv
-Desde la terminal de VS Code (asegúrate de que estás en la raíz del proyecto UIII_BYD_0478), ejecuta:
+### 3\. Procedimiento para abrir terminal en VS Code
 
-Bash
+Dentro de VS Code, presiona `Ctrl + Ñ` (o \`Ctrl + \`\` en algunos teclados, o ve a **Terminal \> Nueva Terminal**).
 
+### 4\. Procedimiento para crear carpeta entorno virtual `.venv`
+
+Desde la terminal de VS Code (asegúrate de que estás en la raíz del proyecto `UIII_BYD_0478`), ejecuta:
+
+```bash
 python -m venv .venv
-5. Procedimiento para activar el entorno virtual
+```
+
+### 5\. Procedimiento para activar el entorno virtual
+
 Ejecuta el comando correspondiente a tu sistema operativo:
 
-Windows (PowerShell):
+  * **Windows (PowerShell):**
+    ```powershell
+    .venv\Scripts\Activate
+    ```
+  * **macOS/Linux:**
+    ```bash
+    source .venv/bin/activate
+    ```
+    Verás `(.venv)` al inicio de tu prompt, indicando que el entorno está activo.
 
-PowerShell
+### 6\. Procedimiento para activar intérprete de Python
 
-.venv\Scripts\Activate
-macOS/Linux:
+Si el entorno virtual está activo (paso 5), VS Code debería detectarlo automáticamente. Si no, haz clic en la versión de Python en la esquina inferior derecha de la ventana de VS Code y selecciona la opción `.venv`.
 
-Bash
+### 7\. Procedimiento para instalar Django
 
-source .venv/bin/activate
-Verás (.venv) al inicio de tu prompt, indicando que el entorno está activo.
-
-6. Procedimiento para activar intérprete de Python
-Si el entorno virtual está activo (paso 5), VS Code debería detectarlo automáticamente. Si no, haz clic en la versión de Python en la esquina inferior derecha de la ventana de VS Code y selecciona la opción .venv.
-
-7. Procedimiento para instalar Django
 Con el entorno virtual activado, instala Django:
 
-Bash
-
+```bash
 pip install django
-8. Procedimiento para crear proyecto backend_Byd sin duplicar carpeta
-Crea el proyecto de Django en el directorio actual (la carpeta raíz UIII_BYD_0478):
+```
 
-Bash
+### 8\. Procedimiento para crear proyecto `backend_Byd` sin duplicar carpeta
 
+Crea el proyecto de Django en el directorio actual (la carpeta raíz `UIII_BYD_0478`):
+
+```bash
 django-admin startproject backend_Byd .
-Nota: El punto (.) evita la carpeta duplicada.
+```
 
-9. Procedimiento para ejecutar servidor en el puerto 8047
+> **Nota:** El punto (`.`) evita la carpeta duplicada.
+
+### 9\. Procedimiento para ejecutar servidor en el puerto 8047
+
 Ejecuta el servidor con el puerto especificado:
 
-Bash
-
+```bash
 python manage.py runserver 8047
-10. Procedimiento para copiar y pegar el link en el navegador
+```
+
+### 10\. Procedimiento para copiar y pegar el link en el navegador
+
 Una vez que el servidor esté corriendo, la terminal mostrará un mensaje similar a:
 
+```
 Starting development server at http://127.0.0.1:8047/
-Copia el enlace: http://127.0.0.1:8047/ y pégalo en tu navegador.
+```
 
-11. Procedimiento para crear aplicación app_Proveedor
-Detén el servidor (Ctrl+C) y crea la aplicación:
+**Copia el enlace:** `http://127.0.0.1:8047/` y pégalo en tu navegador.
 
-Bash
+### 11\. Procedimiento para crear aplicación `app_Proveedor`
 
+Detén el servidor (`Ctrl+C`) y crea la aplicación:
+
+```bash
 python manage.py startapp app_Proveedor
-🛠️ Segunda Parte: Modelos, Migraciones y Vistas
-12. Modelos (models.py)
-Asegúrate de que el archivo app_Proveedor/models.py contenga el código que proporcionaste (lo copio aquí por completitud):
+```
 
-Python
+-----
 
+## 🛠️ Segunda Parte: Modelos, Migraciones y Vistas
+
+### 12\. Modelos (`models.py`)
+
+Asegúrate de que el archivo `app_Proveedor/models.py` contenga el código que proporcionaste (lo copio aquí por completitud):
+
+```python
 # app_Proveedor/models.py
 
 from django.db import models
@@ -146,18 +175,24 @@ class Producto(models.Model):
 
     def __str__(self):
         return self.nombre
-12.5 Procedimiento para realizar las migraciones
+```
+
+-----
+
+### 12.5 Procedimiento para realizar las migraciones
+
 Ejecuta los siguientes comandos:
 
-Bash
-
+```bash
 python manage.py makemigrations app_Proveedor
 python manage.py migrate
-14. Funciones en app_Proveedor/views.py
-Reemplaza el contenido de app_Proveedor/views.py con las funciones CRUD para Proveedor.
+```
 
-Python
+### 14\. Funciones en `app_Proveedor/views.py`
 
+Reemplaza el contenido de `app_Proveedor/views.py` con las funciones CRUD para **`Proveedor`**.
+
+```python
 # app_Proveedor/views.py
 
 from django.shortcuts import render, redirect, get_object_or_404
@@ -242,10 +277,17 @@ def borrar_proveedor(request, pk):
         
     # Si es GET, muestra la página de confirmación
     return render(request, 'proveedor/borrar_proveedor.html', {'proveedor': proveedor})
-🎨 Tercera Parte: Estructura de Templates y Estética
-15. Crear la carpeta templates y la subcarpeta proveedor
+```
+
+-----
+
+## 🎨 Tercera Parte: Estructura de Templates y Estética
+
+### 15\. Crear la carpeta `templates` y la subcarpeta `proveedor`
+
 Asegúrate de que la estructura de carpetas sea:
 
+```
 UIII_BYD_0478/
 └── app_Proveedor/
     ├── templates/
@@ -260,11 +302,13 @@ UIII_BYD_0478/
     │   ├── footer.html
     │   └── inicio.html
     └── ...
-17. base.html (Incluyendo Bootstrap)
-Crea el archivo app_Proveedor/templates/base.html.
+```
 
-HTML
+### 17\. `base.html` (Incluyendo Bootstrap)
 
+Crea el archivo `app_Proveedor/templates/base.html`.
+
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -302,11 +346,13 @@ HTML
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-18. navbar.html
-Crea el archivo app_Proveedor/templates/navbar.html.
+```
 
-HTML
+### 18\. `navbar.html`
 
+Crea el archivo `app_Proveedor/templates/navbar.html`.
+
+```html
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #007bff;"> 
     <div class="container-fluid">
         <a class="navbar-brand" href="{% url 'inicio' %}">
@@ -365,17 +411,21 @@ HTML
     </div>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </nav>
-16/18. header.html
-Crea el archivo app_Proveedor/templates/header.html. (Usaremos este archivo solo para incluir el navbar y los iconos de Bootstrap).
+```
 
-HTML
+### 16/18. `header.html`
 
+Crea el archivo `app_Proveedor/templates/header.html`. (Usaremos este archivo solo para incluir el navbar y los iconos de Bootstrap).
+
+```html
 {% include "navbar.html" %}
-19. footer.html
-Crea el archivo app_Proveedor/templates/footer.html (fijo al final).
+```
 
-HTML
+### 19\. `footer.html`
 
+Crea el archivo `app_Proveedor/templates/footer.html` (fijo al final).
+
+```html
 <footer class="footer mt-auto py-3 fixed-bottom text-white" style="background-color: #007bff;">
     <div class="container text-center">
         <span class="text-white-50">
@@ -385,11 +435,13 @@ HTML
         </span>
     </div>
 </footer>
-20. inicio.html
-Crea el archivo app_Proveedor/templates/inicio.html.
+```
 
-HTML
+### 20\. `inicio.html`
 
+Crea el archivo `app_Proveedor/templates/inicio.html`.
+
+```html
 {% extends "base.html" %}
 
 {% block title %}Inicio{% endblock %}
@@ -412,10 +464,13 @@ HTML
     </div>
 </div>
 {% endblock %}
-22. CRUD de Proveedor (en app_Proveedor/templates/proveedor/)
-22.1. agregar_proveedor.html
-HTML
+```
 
+### 22\. CRUD de Proveedor (en `app_Proveedor/templates/proveedor/`)
+
+#### 22.1. `agregar_proveedor.html`
+
+```html
 {% extends "base.html" %}
 
 {% block title %}Agregar Proveedor{% endblock %}
@@ -463,9 +518,11 @@ HTML
     </div>
 </div>
 {% endblock %}
-22.2. ver_proveedores.html (Inicio y Ver)
-HTML
+```
 
+#### 22.2. `ver_proveedores.html` (Inicio y Ver)
+
+```html
 {% extends "base.html" %}
 
 {% block title %}Ver Proveedores{% endblock %}
@@ -519,9 +576,11 @@ HTML
 </div>
 {% endif %}
 {% endblock %}
-22.3. actualizar_proveedor.html
-HTML
+```
 
+#### 22.3. `actualizar_proveedor.html`
+
+```html
 {% extends "base.html" %}
 
 {% block title %}Actualizar Proveedor{% endblock %}
@@ -570,9 +629,11 @@ HTML
     </div>
 </div>
 {% endblock %}
-22.4. borrar_proveedor.html
-HTML
+```
 
+#### 22.4. `borrar_proveedor.html`
+
+```html
 {% extends "base.html" %}
 
 {% block title %}Borrar Proveedor{% endblock %}
@@ -594,12 +655,17 @@ HTML
     </div>
 </div>
 {% endblock %}
-🔗 Cuarta Parte: Configuración de URLs
-24. Crear app_Proveedor/urls.py
-Crea este archivo dentro de la carpeta de la aplicación app_Proveedor:
+```
 
-Python
+-----
 
+## 🔗 Cuarta Parte: Configuración de URLs
+
+### 24\. Crear `app_Proveedor/urls.py`
+
+Crea este archivo dentro de la carpeta de la aplicación `app_Proveedor`:
+
+```python
 # app_Proveedor/urls.py
 
 from django.urls import path
@@ -617,11 +683,13 @@ urlpatterns = [
     path('proveedor/guardar_actualizacion/<int:pk>/', views.realizar_actualizacion_proveedor, name='realizar_actualizacion_proveedor'),
     path('proveedor/borrar/<int:pk>/', views.borrar_proveedor, name='borrar_proveedor'),
 ]
-25. Agregar app_Proveedor en backend_Byd/settings.py
-Abre backend_Byd/settings.py y agrega app_Proveedor a la lista INSTALLED_APPS:
+```
 
-Python
+### 25\. Agregar `app_Proveedor` en `backend_Byd/settings.py`
 
+Abre `backend_Byd/settings.py` y agrega `app_Proveedor` a la lista `INSTALLED_APPS`:
+
+```python
 # backend_Byd/settings.py
 
 INSTALLED_APPS = [
@@ -639,11 +707,13 @@ INSTALLED_APPS = [
 
 # Configuración adicional para Bootstrap Icons (opcional pero recomendado)
 STATIC_URL = '/static/'
-26. Enlazar app_Proveedor en backend_Byd/urls.py
-Abre backend_Byd/urls.py y configura el enrutador principal:
+```
 
-Python
+### 26\. Enlazar `app_Proveedor` en `backend_Byd/urls.py`
 
+Abre `backend_Byd/urls.py` y configura el enrutador principal:
+
+```python
 # backend_Byd/urls.py
 
 from django.contrib import admin
@@ -654,14 +724,19 @@ urlpatterns = [
     # ENLACE CON app_Proveedor
     path('', include('app_Proveedor.urls')),
 ]
-⚙️ Quinta Parte: Finalización
-27. Procedimiento para registrar los modelos en admin.py y volver a realizar las migraciones
-27.1. Registrar en admin.py
+```
 
-Abre app_Proveedor/admin.py y registra los tres modelos:
+-----
 
-Python
+## ⚙️ Quinta Parte: Finalización
 
+### 27\. Procedimiento para registrar los modelos en `admin.py` y volver a realizar las migraciones
+
+**27.1. Registrar en `admin.py`**
+
+Abre `app_Proveedor/admin.py` y registra los tres modelos:
+
+```python
 # app_Proveedor/admin.py
 
 from django.contrib import admin
@@ -687,28 +762,34 @@ class ProductoAdmin(admin.ModelAdmin):
     list_filter = ('proveedor', 'distribuidores')
     search_fields = ('nombre', 'sku')
     filter_horizontal = ('distribuidores',) # Mejor widget para ManyToMany
-27.2. Volver a realizar las migraciones
+```
 
-Ya hiciste la migración inicial, pero por buena práctica, si hicieras cambios adicionales que afecten a la BD (como las clases Admin no lo hacen, es opcional), ejecutarías:
+**27.2. Volver a realizar las migraciones**
 
-Bash
+Ya hiciste la migración inicial, pero por buena práctica, si hicieras cambios adicionales que afecten a la BD (como las clases `Admin` no lo hacen, es opcional), ejecutarías:
 
+```bash
 # Opcional, solo si cambiaste un modelo (no requerido ahora)
 # python manage.py makemigrations app_Proveedor
 # python manage.py migrate
-Nota: El código es funcional sin más migraciones en este punto.
+```
 
-27.3. Crear Superusuario (para acceder al admin)
+> **Nota:** El código es funcional sin más migraciones en este punto.
 
-Bash
+**27.3. Crear Superusuario (para acceder al admin)**
 
+```bash
 python manage.py createsuperuser
+```
+
 Sigue las instrucciones en pantalla para crear un usuario administrador.
 
-31. Finalmente, ejecutar servidor en el puerto 8047
+### 31\. Finalmente, ejecutar servidor en el puerto 8047
+
 Ejecuta el servidor:
 
-Bash
-
+```bash
 python manage.py runserver 8047
-Abre tu navegador en http://127.0.0.1:8047/ y haz clic en el menú Proveedor para empezar a trabajar con el CRUD.
+```
+
+Abre tu navegador en `http://127.0.0.1:8047/` y haz clic en el menú **Proveedor** para empezar a trabajar con el CRUD.
